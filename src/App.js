@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import SearchInput, {createFilter} from 'react-search-input'
+import Navbar from './components/Navbar';
+import BatchCards from './components/Card/BatchCards';
+import people from './assets/people.json';
+
+const KEYS_TO_FILTERS = [
+  "name",
+  "jobTitle",
+  "location.city",
+  "location.state",
+  "location.country"
+]
 
 function App() {
+  const [searchfield, setSearchfield] = useState('');
+  const filteredPersons = (searchFilter) => people.filter(createFilter(searchFilter, KEYS_TO_FILTERS))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <Navbar />
+     <BatchCards
+        members={filteredPersons(searchfield)}
+        numberPerBatch={16}
+     />
     </div>
   );
 }

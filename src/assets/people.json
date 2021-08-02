@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "Arturo Castañon",
+    "img": "https://avatars.githubusercontent.com/u/21693926?v=4",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/arturocastanonvargas/",
+      "website": "https://arthurdev.netlify.app/",
+      "github": "https://github.com/ArturVargas",
+      "email": "artur.bx_dev@protonmail.com"
+    },
+    "jobTitle": "Fullstack Dev, Solidity Dev",
+    "location": {
+      "city": "CDMX",
+      "state": "",
+      "country": "Mexico"
+    }
+  }
+]
